@@ -1,0 +1,151 @@
+$accent: #F7654A;
+$dark: #404149;
+$text-gray: #999999;
+$white: #ffffff;
+$bg-color: #F7F7F7;
+$black: #000000;
+$gray: #E5E5E5;
+
+:root {
+  font-size: calc(1vw + 0.6em);
+  box-sizing: border-box;
+
+  @media screen and (min-width: 1110px){
+    font-size: 1em;
+  }
+
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.head {
+  font-family: Oswald, sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.head--large {
+  font-size: 4rem;
+}
+
+
+.head--middle {
+  font-size: 2rem;
+  color: $black;
+}
+
+.head--little {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.head--accent {
+  color: $accent;
+}
+
+.head--dark {
+  color: $dark;
+}
+
+.media {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+
+  color: $text-gray;
+
+
+  * {
+    margin: 0.5rem 0;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+.line {
+  display: block;
+  height: 4px;
+  width: 25%;
+  background-color: $accent;
+}
+
+.menu-toggle{
+  height: 50px;
+  width: 50px;
+  align-self: center;
+  position: relative;
+  background-color: $accent;
+
+  &::after, &::before, span {
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 21px;
+    position: absolute;
+    background: $white;
+    margin: 0 auto;
+  }
+
+  &::after, &::before {
+    content: "";
+  }
+
+  &::after{
+    bottom: 16px;
+  }
+  &::before{
+    top: 16px;
+  }
+
+  span {
+    top: 23px;
+  }
+
+}
+
+.header {
+  background: url("../images/dest/Rectangle.png") $gray top left/100% 82.5% no-repeat;
+  padding: 1.5em;
+}
+
+.header__headings {
+  color: $white;
+  margin: 8em auto;
+}
+
+.header__information {
+  background-color: $bg-color;
+  font-size: 1.125em;
+  margin: 0 -15px;
+  padding: 2em 3em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  @extend .head;
+
+  * {
+    margin: 0;
+  }
+
+}
+
+.our-projects {
+  background-color: $gray;
+}
+
+.text-center {
+  text-align: center !important;
+}
