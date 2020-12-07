@@ -37,12 +37,19 @@ body {
 
 .head--large {
   font-size: 4rem;
+
+  @media screen and (max-width: 350px) {
+    font-size: 3rem;
+  }
+
 }
 
+.head--medium {
+  font-size: 3rem;
+}
 
 .head--middle {
   font-size: 2rem;
-  color: $black;
 }
 
 .head--little {
@@ -56,6 +63,30 @@ body {
 
 .head--dark {
   color: $dark;
+}
+
+.head--black {
+  color: $black;
+}
+
+.head--white {
+  color: $white;
+}
+
+.head--padding-1rem {
+  padding: 1rem;
+}
+
+.button {
+  background-color: $white;
+  color: $black;
+  padding: 1em 2em;
+  border: none;
+  @extend .head;
+}
+
+.button__icon {
+  margin-right: 1em;
 }
 
 .media {
@@ -76,6 +107,10 @@ body {
 
 }
 
+.media__img {
+  object-fit: cover;
+}
+
 .line {
   display: block;
   height: 4px;
@@ -89,6 +124,9 @@ body {
   align-self: center;
   position: relative;
   background-color: $accent;
+}
+
+.menu-toggle--open {
 
   &::after, &::before, span {
     left: 50%;
@@ -113,6 +151,22 @@ body {
 
   span {
     top: 23px;
+  }
+
+}
+
+.menu-toggle--close {
+  width: initial;
+  height: initial;
+
+
+  &::after {
+    content: '\00D7';
+    color: $white;
+    padding: 1rem;
+    font-size: 3rem;
+    line-height: 1;
+    top: calc(25 - 1rem);
   }
 
 }
@@ -180,12 +234,14 @@ body {
 
 .header__information {
   background-color: $bg-color;
+  font-family: Oswald, sans-serif;
   font-size: 1.125em;
+  font-weight: 500;
   margin: 0 -15px;
   padding: 2em 3em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  @extend .head;
+
 
   * {
     margin: 0;
@@ -195,6 +251,12 @@ body {
 
 .our-projects {
   background-color: $gray;
+  padding: 4em 0;
+}
+
+.warning {
+  background-color: $accent;
+  padding: 2em 0;
 }
 
 .text-center {
