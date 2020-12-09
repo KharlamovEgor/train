@@ -1,6 +1,6 @@
 $accent: #F7654A;
 $dark: #404149;
-$text-gray: #999999;
+$text-gray: #777777;
 $white: #ffffff;
 $bg-color: #F7F7F7;
 $black: #000000;
@@ -86,7 +86,13 @@ body {
   color: $black;
   padding: 1em 2em;
   border: none;
+  transition: all 0.2s linear;
   @extend .head;
+
+  &:hover {
+    background-color: darken($white, 10%);
+  }
+
 }
 
 .button__icon {
