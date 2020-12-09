@@ -9,3 +9,21 @@ menuToggles.forEach(selector => {
         wrapper.classList.toggle('is-open');
     });
 });
+
+const heads = document.querySelectorAll('.dropdown__head');
+document.querySelectorAll('.dropdown__drawer').forEach(item => item.style.height = '0px');
+
+heads.forEach(item => {
+    item.addEventListener('click', function (event) {
+        const drawer = this.nextElementSibling;
+
+        if (!(drawer.style.height == '0px')) {
+            drawer.style.height = 0;
+            console.log(drawer.style.height);
+        } else {
+            console.log('rhz')
+            drawer.style.height = drawer.scrollHeight + 'px';
+        }
+
+    })
+})
