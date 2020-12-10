@@ -16,7 +16,7 @@ document.querySelectorAll('.dropdown__drawer').forEach(item => item.style.height
 heads.forEach(item => {
     item.addEventListener('click', function (event) {
         const drawer = this.nextElementSibling;
-
+        drawer.closest('.dropdown').classList.toggle('is-open');
         if (!(drawer.style.height == '0px')) {
             drawer.style.height = 0;
             console.log(drawer.style.height);

@@ -26,6 +26,7 @@ $gray: #E5E5E5;
 
 body {
   margin: 0;
+  scroll-behavior: smooth;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -33,6 +34,7 @@ body {
   font-family: Oswald, sans-serif;
   font-weight: 500;
   line-height: 1.5;
+  text-transform: uppercase;
 }
 
 .head--large {
@@ -109,18 +111,12 @@ body {
     margin: 0.5rem 0;
   }
 
-  *:last-child {
-    margin-bottom: 0;
-  }
+
 
 }
 
 .media__img {
   object-fit: cover;
-}
-
-.media__content {
-  margin: 0;
 }
 
 .media--light {
@@ -129,6 +125,10 @@ body {
 
 .media--padding {
   padding: 2em;
+}
+
+.media--padding-bottom {
+  padding-bottom: 2em;
 }
 
 .line {
@@ -279,6 +279,10 @@ body {
   padding: 2em 1em;
 }
 
+.warning--dark {
+  background-color: $dark;
+}
+
 .warning__button {
   margin-top: 2.5rem;
 }
@@ -288,15 +292,15 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 1.5em;
 
+  @media screen and (max-width: 576px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
   img {
     display: block;
     margin: 0 auto;
     height: 50px;
     width: 60px;
-  }
-
-  @media screen and (max-width: 576px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
 }
@@ -307,7 +311,7 @@ body {
   grid-auto-rows: 1fr;
 
   @media screen and (max-width: 576px) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
   figure {
@@ -354,7 +358,7 @@ body {
   .dropdown__head {
 
     &::before {
-      border-color: transparent transparent transparent $accent;
+      border-color: transparent transparent $accent transparent;
     }
 
   }
@@ -369,9 +373,9 @@ body {
   &::before {
     content: '';
     border: 8px solid transparent;
-    border-top-color: $accent;
+    border-left-color: $accent;
     position: absolute;
-    top: .5em;
+    top: .4em;
     left: 0;
   }
 
@@ -389,4 +393,60 @@ body {
 
 .text-center {
   text-align: center !important;
+}
+
+.our-sponsors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  img {
+    display: block;
+    width: 100%;
+    padding: 1em;
+  }
+
+}
+
+.recall__message {
+  padding: 4rem 2rem 2rem 2rem;
+  background-color: $bg-color;
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $text-gray;
+  position: relative;
+
+  &::before {
+    content: '“';
+    position: absolute;
+    top: 0;
+    font-size: 5rem;
+    @extend .head, .head--accent;
+  }
+
+}
+
+.recall__author {
+  padding: 2rem 0;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  img {
+    display: block;
+    width: auto;
+    height: 70px;
+    margin: 0 auto;
+  }
+
+}
+
+.footer {
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: $white;
 }
